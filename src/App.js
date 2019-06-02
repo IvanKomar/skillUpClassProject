@@ -5,10 +5,9 @@ import "./header.css"
 import "./menu.css"
 import "./cart.css"
 
-const App = () => {
-    return(
-    <div>
-        <header className="header">
+const Header = () => { 
+    return (
+    <header className="header">
 		<div className="container">
 			<div className="row">
 				<div className="col-lg-3">
@@ -35,21 +34,38 @@ const App = () => {
 			</div>
 		</div>
 	</header>
-	<main className="main">
+)
+}
+const Main = () =>  {
+    return (
+    <main className="main">
 		<div className="container">
 			<div className="row">
 				<div className="col-lg-3">
-					
+                 filter
 				</div>
 				<div className="col-lg-9">
-					
+				product-list
 				</div>
 			</div>
 		</div>
 	</main>
-	<footer className="footer">
-		
+)
+}
+const Footer = () =>  {
+    return (
+    <footer className="footer">
+		footer
 	</footer>
+)
+}
+
+const App = () => {
+    return(
+    <div>
+        <Header/>
+        <Main/>
+        <Footer/>
     </div>
     )
 }
