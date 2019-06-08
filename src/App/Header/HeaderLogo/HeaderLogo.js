@@ -1,12 +1,11 @@
 import React from "react"
+import logo from './logo.png'
 
 const HeaderLogo = () => {
     return (
-
     <div className="logo">
-        <img src="img/logo.png" alt=""/>
+        <img src={logo} alt=""/>
     </div>
-
     )
 }           
 export default HeaderLogo
