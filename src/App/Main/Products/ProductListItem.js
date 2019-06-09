@@ -1,11 +1,11 @@
 import React from 'react'
 import './ProductListItem.css'
 
-const ProductListItem = () => {
+const ProductListItem = (props) => {
 
     return (
         <div className="product-list-item">
-            <div className="product-title"> iPhone 7 </div>
+            <div className="product-title"> {props.name} </div>
             <div className="product-description">This is Iphone 7...</div>
             <div className="product-features">Type: phone</div>
             <div className="product-features">Capacity: 64 Gb</div>
