@@ -10,19 +10,26 @@ const ProductsList = () => {
             <div className="row">
                 <div className="col-lg-6">
                     <ProductListItem
-                    name="iPhone SE"/>
+                    name="iPhone SE"
+                    description="This is iPhone SE" />
                 </div>
                 <div className="col-lg-6">
                     <ProductListItem
-                    name="iPhone X"/>
+                    name="iPhone X"
+                    description="This is iPhone X" 
+                    />
                 </div>
                 <div className="col-lg-6">
                     <ProductListItem
-                    name="iPhone XL"/>
+                    name="iPhone XL"
+                    description="This is iPhone XL"
+                    />
                 </div>
                 <div className="col-lg-6">
                     <ProductListItem
-                    name="iPad pro"/>
+                    name="iPad pro"
+                    description="This is iPad pro"
+                    />
                 </div>
             </div>
         </div>
