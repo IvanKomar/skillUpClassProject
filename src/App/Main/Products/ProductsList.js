@@ -11,6 +11,15 @@ const ProductsList = () => {
                 <div className="col-lg-6">
                     <ProductListItem/>
                 </div>
+                <div className="col-lg-6">
+                    <ProductListItem/>
+                </div>
+                <div className="col-lg-6">
+                    <ProductListItem/>
+                </div>
+                <div className="col-lg-6">
+                    <ProductListItem/>
+                </div>
             </div>
         </div>
     )
