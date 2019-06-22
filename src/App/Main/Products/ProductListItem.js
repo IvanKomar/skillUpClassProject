@@ -11,7 +11,7 @@ const ProductListItem = ( {
 }) => {
     return (
         <div className="product-list-item"> 
-            <div className="product-img"> <img  alt="product-img" src={image}></img></div>
+            <div className="product-img"> <img  alt={`picture ${name}`} src={image}></img></div>
             <div className="product-title"> {name} </div>
             <div className="product-description"> {description}</div>
             <div className="product-features">{type}</div>
