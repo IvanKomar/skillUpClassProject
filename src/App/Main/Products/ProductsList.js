@@ -9,9 +9,9 @@ const ProductsList = () => {
             <h1 className="page-title">ProductsList</h1>
             <div className="row"> 
                 {
-                    products.map( (product) => (
+                    products.map( (product, index) => (
                    
-                <div className="col-lg-6">
+                <div className="col-lg-6" key={index}>
                     <ProductListItem
                     name={product.name}
                     description={product.description} 
