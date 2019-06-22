@@ -16,7 +16,6 @@ const ProductListItem = ( {
             <div className="product-features">{capacity}</div>
             <div className="product-price"> {price}</div>
             <button className="btn-add-to-cart">Add to Cart</button>
-            }
         </div>
     )
 }
