@@ -2,7 +2,7 @@ const products = [
     {
         id:1,
         name: 'Iphone SE',
-        description: 'This is cheapes prone from apple',
+        // description: 'This is cheapes prone from apple',
         type: 'phone',
         price: 300,
         capacity:256,
