@@ -4,8 +4,8 @@ const products = [
         name: 'Iphone SE',
         description: 'This is cheapes prone from apple',
         type: 'phone',
-        price: '300 $',
-        capacity:"256",
+        price: 300,
+        capacity:256,
         image: "/images/products/iphone.png",
     },
     {
@@ -13,8 +13,8 @@ const products = [
         name: 'iphone x',
         description: 'this is iphone x a smartphone from apple',
         type: 'phone',
-        price: '1000 $',
-        capacity:"256",
+        price: 1000,
+        capacity:256,
         image: "/images/products/iphone.png",
     },
     {
@@ -22,8 +22,8 @@ const products = [
         name: 'iphone xl',
         description: 'this is newest iphone xl',
         type: 'phone',
-        price: '1100 $',
-        capacity:"256",
+        price: 1100,
+        capacity:256,
         image: "/images/products/iphone.png",
     },
     {
@@ -31,8 +31,8 @@ const products = [
         name: 'ipad pro',
         description: 'this is ipad pro a tablet from apple',
         type: 'tablet',
-        price: '1230 $',
-        capacity:"256",
+        price: 1230,
+        capacity:256,
         image: "/images/products/ipod.png",
     },
 ]
