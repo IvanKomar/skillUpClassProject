@@ -32,8 +32,6 @@ ProductListItem.propTypes = {
     capacity:PropTypes.number.isRequired,
     image:PropTypes.string,
 }
-// ProductListItem.defaultProps = {
-//     description: "No description ...",
-// }
+
 
 export default ProductListItem
