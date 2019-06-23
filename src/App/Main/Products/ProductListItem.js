@@ -25,11 +25,11 @@ const ProductListItem = ( {
 }
 
 ProductListItem.propTypes = {
-    name:PropTypes.string, 
+    name:PropTypes.string.isRequired, 
     description:PropTypes.string, 
-    type:PropTypes.string, 
-    price:PropTypes.number,
-    capacity:PropTypes.number,
+    type:PropTypes.string.isRequired, 
+    price:PropTypes.number.isRequired,
+    capacity:PropTypes.number.isRequired,
     image:PropTypes.string,
 }
 
