@@ -4,21 +4,15 @@ import './ProductListItem.css'
 
 class ProductListItem extends Component {
 
-    constructor () {
-        super()
-        this.state = {
+    state = {
             productCount: 1
         }
-    }
-
-    static defaultProps = {
-        description: 'No description ...',
-    }
+    
 
     render () {
         const {
             name,
-            description,
+            description = 'No description...',
             capacity,
             type,
             image, 
