@@ -14,7 +14,7 @@ class ProductListItem extends Component {
     render () {
         const {
             name,
-            description,
+            description = 'no description...',
             capacity,
             type,
             image, 
@@ -46,8 +46,5 @@ ProductListItem.propTypes = {
     image:PropTypes.string,
 }
 
-ProductListItem.defaultProps = {
-    description: 'no description...'
-}
 
 export default ProductListItem
