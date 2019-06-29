@@ -11,10 +11,14 @@ class ProductListItem extends Component {
         }
     }
 
+    static defaultProps = {
+        description: 'No description ...',
+    }
+
     render () {
         const {
             name,
-            description = 'no description...',
+            description,
             capacity,
             type,
             image, 
