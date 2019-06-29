@@ -4,6 +4,11 @@ import './ProductListItem.css'
 
 class ProductListItem extends Component {
 
+    constructor() {
+        super()
+        this.OnIncrementClick = this.OnIncrementClick.bind(this)
+    }
+
     state = {
             productCount: 1
         }
@@ -33,7 +38,7 @@ class ProductListItem extends Component {
         <div className="product-quantity">
             <button>-</button>
             <input type="text" value={this.state.productCount} readOnly/>
-            <button onClick={()=>this.OnIncrementClick()}> +</button> </div>
+            <button onClick={this.OnIncrementClick}> +</button> </div>
         <div className="product-price"> {price} $</div>
         <button className="btn-add-to-cart">Add to Cart</button>
     </div>)
