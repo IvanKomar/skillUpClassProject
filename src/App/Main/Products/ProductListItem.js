@@ -4,16 +4,13 @@ import './ProductListItem.css'
 
 class ProductListItem extends Component {
 
-    constructor() {
-        super()
-        this.OnIncrementClick = this.OnIncrementClick.bind(this)
-    }
+ 
 
     state = {
             productCount: 1
         }
     
-    OnIncrementClick () {
+    OnIncrementClick = () => {
         this.setState((prevState) => ({
             productCount: prevState.productCount + 1
         }))
