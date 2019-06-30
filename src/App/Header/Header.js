@@ -20,7 +20,7 @@ const Header = (
 			</div>
 			<div className="col-lg-3">
 			<HeaderCart
-			cartPrice={cartData.cartPrice}
+			totalPrice={cartData.totalPrice}
 			totalCount={cartData.totalCount}
 			/>
 			</div>

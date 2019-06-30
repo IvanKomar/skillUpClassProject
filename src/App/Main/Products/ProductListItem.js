@@ -6,26 +6,18 @@ class ProductListItem extends Component {
 
     state = {
             productCount: 1,
-            price: this.props,
-            name: this.props,
-            totalPrice: this.CartTotal
     }
-    OnIncrementClick () {
+    OnIncrementClick = () => {
         this.setState((prevState) => ({
             productCount: prevState.productCount + 1
         }))
     }
-    OnDecrementClick  () {
+    OnDecrementClick = ()=> {
         this.setState((prevState) => ({
             productCount: prevState.productCount - 1
         }))
     }
-    CartTotal () {
-        this.setState((prevState) => ({
-            totalPrice: prevState.price * prevState.productCount
-            }))
-        }
-
+    
     render () {
         const {
             name,
@@ -34,6 +26,7 @@ class ProductListItem extends Component {
             type,
             image, 
             price,
+            addProductToCart,
         } = this.props
 
         return (<div className="product-list-item"> 
@@ -44,16 +37,19 @@ class ProductListItem extends Component {
         <div className="product-features">Capacity: {capacity} GB</div>
         <div className="product-quantity">
             <button 
-            onClick={()=>this.OnDecrementClick()} 
+            onClick={this.OnDecrementClick} 
             disabled={this.state.productCount<=1}>-
             </button>
             <input type="text" value={this.state.productCount} readOnly/>
             <button 
-            onClick={()=>this.OnIncrementClick()} 
-            disabled={this.state.productCount>=10}> +
-            </button> </div>
+            onClick={this.OnIncrementClick} 
+            disabled={this.state.productCount>=10}> 
+            +</button> </div>
         <div className="product-price"> {price} $</div>
-        <button className="btn-add-to-cart" onClick={()=>this.CartTotal()}>Add to Cart</button>
+        <button 
+        onClick={()=>addProductToCart(this.state.productCount, price)}
+        className="btn-add-to-cart" 
+        >Add to Cart</button>
     </div>)
     }
 }

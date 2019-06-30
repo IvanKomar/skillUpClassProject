@@ -3,12 +3,12 @@ import "./cart.css"
 
 
 const HeaderCart = (
-    {totalCount,cartPrice }
+    {totalCount,totalPrice }
     ) => { 
     return (
     <div className="cart text-center">
         <div className="products-count">Total count: {totalCount}</div>
-        <div className="products-price">Total price: ${cartPrice}</div>
+        <div className="products-price">Total price: ${totalPrice}</div>
     </div>
     )
 }
