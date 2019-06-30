@@ -2,11 +2,13 @@ import React from "react"
 import "./cart.css"
 
 
-const HeaderCart = () => { 
+const HeaderCart = (
+    {totalCount,cartPrice }
+    ) => { 
     return (
     <div className="cart text-center">
-        <div className="products-count">0</div>
-        <div className="products-price">$500</div>
+        <div className="products-count">Total count: {totalCount}</div>
+        <div className="products-price">Total price: ${cartPrice}</div>
     </div>
     )
 }

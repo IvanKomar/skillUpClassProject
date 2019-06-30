@@ -57,13 +57,17 @@
     width: 30px;
     height: 30px;
     background-color: black;
-    outline: 3px solid rgba(255, 0, 100, 0.5);
+    outline: 1px;
     border: none;
     color: white;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 14px;
 }
 .product-quantity input {
     height: 30px;
     text-align: center;
+}
+button:disabled {
+    background-color: lightslategray;
+
 }

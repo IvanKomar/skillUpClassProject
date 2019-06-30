@@ -5,9 +5,11 @@ import './ProductListItem.css'
 class ProductListItem extends Component {
 
     state = {
-            productCount: 1
-        }
-    
+            productCount: 1,
+            price: this.props,
+            name: this.props,
+            totalPrice: this.CartTotal
+    }
     OnIncrementClick () {
         this.setState((prevState) => ({
             productCount: prevState.productCount + 1
@@ -18,6 +20,11 @@ class ProductListItem extends Component {
             productCount: prevState.productCount - 1
         }))
     }
+    CartTotal () {
+        this.setState((prevState) => ({
+            totalPrice: prevState.price * prevState.productCount
+            }))
+        }
 
     render () {
         const {
@@ -36,11 +43,17 @@ class ProductListItem extends Component {
         <div className="product-features">Type: {type}</div>
         <div className="product-features">Capacity: {capacity} GB</div>
         <div className="product-quantity">
-            <button onClick={()=>this.OnDecrementClick()}>-</button>
+            <button 
+            onClick={()=>this.OnDecrementClick()} 
+            disabled={this.state.productCount<=1}>-
+            </button>
             <input type="text" value={this.state.productCount} readOnly/>
-            <button onClick={()=>this.OnIncrementClick()}> +</button> </div>
+            <button 
+            onClick={()=>this.OnIncrementClick()} 
+            disabled={this.state.productCount>=10}> +
+            </button> </div>
         <div className="product-price"> {price} $</div>
-        <button className="btn-add-to-cart">Add to Cart</button>
+        <button className="btn-add-to-cart" onClick={()=>this.CartTotal()}>Add to Cart</button>
     </div>)
     }
 }
