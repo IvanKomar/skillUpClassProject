@@ -3,6 +3,11 @@ import {keys} from 'lodash'
 import "./cart.css"
 import products from './../../Main/Products/products'
 
+const productMap = products.reduce((accObj, product)=>({
+    ...accObj,
+    [product.id]: product
+}), {})
+
 const HeaderCart = (
     { productsInCart }
     ) => { 
@@ -12,7 +17,7 @@ const HeaderCart = (
             keys(productsInCart).map((productId)=> (
                 <div>
                     <span>
-                        {products[productId-1].name} 
+                        {productMap[productId].name} 
                     </span>:
                     <span>
                         {productsInCart[productId]}
