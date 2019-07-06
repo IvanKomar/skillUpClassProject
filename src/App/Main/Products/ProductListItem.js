@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import './ProductListItem.css'
-
+import products from './../../Main/Products/products'
 class ProductListItem extends Component {
 
     state = {
