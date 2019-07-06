@@ -4,18 +4,18 @@ import "./cart.css"
 
 
 const HeaderCart = (
-    { ProductsInCart }
+    { productsInCart }
     ) => { 
     return (
     <div className="cart text-center">
         {
-            keys(ProductsInCart).map((productId)=> (
+            keys(productsInCart).map((productId)=> (
                 <div>
                     <span>
                         {productId} 
                     </span>:
                     <span>
-                        {ProductsInCart[productId]}
+                        {productsInCart[productId]}
                     </span>
                 </div>
             ))
