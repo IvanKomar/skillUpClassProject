@@ -6,7 +6,7 @@ import HeaderCart from "./HeaderCart/HeaderCart"
 
 
 const Header = (
-	{cartData}
+	{ProductsInCart}
 	) => { 
     return (
     <header className="header">
@@ -20,8 +20,7 @@ const Header = (
 			</div>
 			<div className="col-lg-3">
 			<HeaderCart
-			totalPrice={cartData.totalPrice}
-			totalCount={cartData.totalCount}
+			ProductsInCart = {ProductsInCart}
 			/>
 			</div>
 			</div>

@@ -1,15 +1,27 @@
 import React from "react"
+import {keys} from 'lodash'
 import "./cart.css"
 
 
 const HeaderCart = (
-    {totalCount,totalPrice }
+    { ProductsInCart }
     ) => { 
     return (
     <div className="cart text-center">
-        <div className="products-count">Total count: {totalCount}</div>
-        <div className="products-price">Total price: ${totalPrice}</div>
-    </div>
+        {
+            keys(ProductsInCart).map((productId)=> (
+                <div>
+                    <span>
+                        {productId} 
+                    </span>:
+                    <span>
+                        {ProductsInCart[productId]}
+                    </span>
+                </div>
+            ))
+        }
+        </div>
+    
     )
 }
 export default HeaderCart
