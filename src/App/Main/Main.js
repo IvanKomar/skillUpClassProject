@@ -12,8 +12,9 @@ const Main = ({addProductToCart}) =>  {
                  filter
 				</div>
 				<div className="col-lg-9">
-				<ProductsList
-				addProductToCart={addProductToCart}/>
+				{/* <ProductsList
+				addProductToCart={addProductToCart}/> */}
+				<Route path='/' exact component={ProductsList}/>
 				<Route path='/cart' component={CartPage}/>
 				</div>
 			</div>
