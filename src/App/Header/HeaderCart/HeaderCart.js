@@ -27,7 +27,7 @@ const HeaderCart = (
                 </div>
             ))
         }
-            <div>   total: $ {
+            <div>   Total: $ {
                     keys(productsInCart).reduce((total, productId)=>(
                        total +( productMap[productId].price *  productsInCart[productId])
                     ), 0)
@@ -35,7 +35,7 @@ const HeaderCart = (
                     </div>
                 
         
-                <Link to='/cart'>Show cart</Link>
+                <Link to='/cart' className="btn-add-to-cart">Show cart</Link>
         </div>
     
     )

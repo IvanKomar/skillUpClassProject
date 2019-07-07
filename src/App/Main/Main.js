@@ -5,7 +5,7 @@ import CartPage from '../Main/Cart/CartPage'
 import PaymentPage from '../Main/Payment/PaymentPage'
 import ShippingPage from '../Main/Shipping/ShippingPage'
 
-const Main = ({addProductToCart}) =>  {
+const Main = ({addProductToCart, productsInCart}) =>  {
     return (
     <main className="main">
 		<div className="container">
@@ -14,10 +14,10 @@ const Main = ({addProductToCart}) =>  {
                  filter
 				</div>
 				<div className="col-lg-9">
-				<Route path='/Payment' component={PaymentPage}/>
-				<Route path='/Shipping' component={ShippingPage}/>
+				<Route path='/payment' component={PaymentPage}/>
+				<Route path='/shipping' component={ShippingPage}/>
 				<Route path='/' exact render={()=> <ProductsList addProductToCart={addProductToCart}/>}/>
-				<Route path='/cart' component={CartPage}/>
+				<Route path='/cart' exact render={()=> <CartPage productsInCart = {productsInCart}/>}/>
 				</div>
 			</div>
 		</div>
