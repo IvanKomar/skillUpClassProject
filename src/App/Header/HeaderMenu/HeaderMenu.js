@@ -1,5 +1,5 @@
 import React from "react"
-
+import {Link} from 'react-router-dom'
 import "./menu.css"
 
 const HeaderMenu = () => { 
@@ -7,10 +7,10 @@ const HeaderMenu = () => {
 
     <div className="menu">
         <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Product</a></li>
-            <li><a href="">Payment</a></li>
-            <li><a href="">Shipping</a></li>
+        <li> <Link to="/">Home</Link></li>
+        <li> <Link to="/">Products</Link></li>    
+        <li> <Link to="/Payment">Payment</Link></li>
+        <li> <Link to="/Shipping">Shipping</Link></li>
         </ul>
     </div>
 
