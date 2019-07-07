@@ -8,6 +8,7 @@ const productMap = products.reduce((accObj, product)=>({
     [product.id]: product
 }), {})
 
+
 const HeaderCart = (
     { productsInCart }
     ) => { 
@@ -25,6 +26,12 @@ const HeaderCart = (
                 </div>
             ))
         }
+                total: $ {
+                    keys(productsInCart).reduce((total, productId)=>(
+                       total +( productMap[productId].price *  productsInCart[productId])
+                    ), 0)
+                    }
+        
         </div>
     
     )
