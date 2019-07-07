@@ -1,6 +1,8 @@
 import React from "react"
-
+import {Route} from 'react-router-dom'
 import ProductsList from './Products/ProductsList'
+import CartPage from '../Main/Cart/CartPage'
+
 const Main = ({addProductToCart}) =>  {
     return (
     <main className="main">
@@ -12,6 +14,7 @@ const Main = ({addProductToCart}) =>  {
 				<div className="col-lg-9">
 				<ProductsList
 				addProductToCart={addProductToCart}/>
+				<Route path='/cart' component={CartPage}/>
 				</div>
 			</div>
 		</div>

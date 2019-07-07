@@ -1,7 +1,7 @@
 const products = [
     {
         id:1,
-        name: 'Iphone SE',
+        name: 'iphone SE',
         // description: 'This is cheapes prone from apple',
         type: 'phone',
         price: 300,
@@ -10,7 +10,7 @@ const products = [
     },
     {
         id:2,
-        name: 'iphone x',
+        name: 'iphone X',
         description: 'this is iphone x a smartphone from apple',
         type: 'phone',
         price: 1000,
@@ -19,7 +19,7 @@ const products = [
     },
     {
         id:3,
-        name: 'iphone xl',
+        name: 'iphone XL',
         description: 'this is newest iphone xl',
         type: 'phone',
         price: 1100,
@@ -28,7 +28,7 @@ const products = [
     },
     {
         id:4,
-        name: 'ipad pro',
+        name: 'ipad Pro',
         description: 'this is ipad pro a tablet from apple',
         type: 'tablet',
         price: 1230,
