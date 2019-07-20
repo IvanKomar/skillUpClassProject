@@ -7,6 +7,7 @@ import Main from './Main/Main'
 import Footer from './Footer/Footer'
 
 
+
 class App extends Component {
 
     state = {
@@ -27,6 +28,7 @@ class App extends Component {
         <div>
             <Header
             productsInCart={this.state.productsInCart}
+            
             />
             <Main
             addProductToCart={this.addProductToCart}

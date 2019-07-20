@@ -5,6 +5,7 @@ import CartPage from '../Main/Cart/CartPage'
 import PaymentPage from '../Main/Payment/PaymentPage'
 import ShippingPage from '../Main/Shipping/ShippingPage'
 
+
 const Main = ({addProductToCart, productsInCart}) =>  {
     return (
     <main className="main">
