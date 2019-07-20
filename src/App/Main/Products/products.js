@@ -37,4 +37,13 @@ const products = [
     },
 ]
 
+
+export const getProductsMap = (anyArrayProducts) =>  
+    {
+    return (anyArrayProducts.reduce((accObj, product)=>({
+        ...accObj,
+        [product.id]: product
+        }), {})
+    )}
+
 export default products
