@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import "../common/style/reset.css"
 import "../common/style/base.css"
 
+import {omit} from 'lodash'
 import Header from './Header/Header'
 import Main from './Main/Main'
 import Footer from './Footer/Footer'
@@ -16,11 +17,16 @@ class App extends Component {
         }
     }
     addProductToCart = (prouctId, count) => {
-        this.setState((prevState) => ({
+        this.setState((prevState) => ( {
             productsInCart: {
             ...prevState.productsInCart, 
             [prouctId]:(prevState.productsInCart[prouctId] || 0) + count,
         } 
+        }))
+    }
+    removeProductFromCart = (prouctId) => {
+        this.setState((prevState) =>({
+            productsInCart: omit(prevState.productsInCart, [prouctId])
         }))
     }
            render () {
@@ -28,11 +34,12 @@ class App extends Component {
         <div>
             <Header
             productsInCart={this.state.productsInCart}
-            
             />
+            <button onClick={()=>this.removeProductFromCart(1)}>blabla</button>
             <Main
             addProductToCart={this.addProductToCart}
             productsInCart={this.state.productsInCart}
+            
             />
             <Footer/>
         </div>

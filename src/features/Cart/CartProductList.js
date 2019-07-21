@@ -14,6 +14,7 @@ const CartProductList = ({
     {  
           keys(productsInCart).map((productId)=> (
             <CartListItem
+            key={productId}
             product={productsMap[productId]}
             productCount={productsInCart[productId]}
             />
