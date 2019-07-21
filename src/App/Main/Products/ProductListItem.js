@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types';
 import './ProductListItem.css'
 import QuantityInput from '../../../features/quantity/QuantittyInput'
+
 class ProductListItem extends Component {
 
     state = {

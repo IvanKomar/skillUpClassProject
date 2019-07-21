@@ -2,6 +2,7 @@ import React from 'react'
 import './ProductsList.css'
 import ProductListItem from './ProductListItem'
 import products from './products'
+
 const ProductsList = ({addProductToCart}) => {
 
     return (
