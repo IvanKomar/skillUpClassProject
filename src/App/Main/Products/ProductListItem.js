@@ -38,6 +38,7 @@ class ProductListItem extends Component {
         <div className="product-features">Type: {type}</div>
         <div className="product-features">Capacity: {capacity} GB</div>
         <QuantityInput
+        minValue={1}
         OnDecrementClick={this.OnDecrementClick}
         productCount={this.state.productCount}
         OnIncrementClick={this.OnIncrementClick}

@@ -25,8 +25,16 @@ import QuantityInput from '../quantity/QuantittyInput'
                          Selected quantity: <span className="bold"> {productCount} </span> 
                     </p>
                     <QuantityInput
+                    minValue={0}
                     ChangeCountInCart={ChangeCountInCart}
-                    OnDecrementClick={()=>ChangeCountInCart(product.id,productCount -1)}
+                    OnDecrementClick={()=>{
+                        if (productCount===1) {
+                            removeProductFromCart(product.id)
+                        } 
+                        else {
+                            ChangeCountInCart(product.id,productCount -1)
+                        }
+                        }}
                     productCount={productCount}
                     OnIncrementClick={()=>ChangeCountInCart(product.id,productCount +1)}
                     />

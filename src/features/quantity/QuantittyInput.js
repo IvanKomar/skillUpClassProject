@@ -3,13 +3,14 @@ import React from 'react'
 const QuantityInput = ({
     OnDecrementClick,
     productCount,
-    OnIncrementClick}) => {
+    OnIncrementClick,
+    minValue}) => {
     return (
 
         <div className="product-quantity">
         <button 
         onClick={()=>OnDecrementClick()} 
-        disabled={productCount<=1}>-
+        disabled={productCount<=minValue}>-
         </button>
         <input type="text" value={productCount} readOnly/>
         <button 
