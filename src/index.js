@@ -10,10 +10,11 @@ import * as serviceWorker from './serviceWorker';
 const productLikeReducer = (state={
     '1': true,
     '2': true,
-},action)=> state
+},action) => state
 const store = createStore(productLikeReducer) 
 // reducer - функция яка буде знати як змінювати стейт
 // в createStore потрібно передати reducer productLikeReducer на базі попереднього стейту та екшну
+// компонент якому потрібно брати дані зі сховища потрібно підключити за допомогою функції connect
 
 ReactDOM.render(
     <Provider store={store}>
