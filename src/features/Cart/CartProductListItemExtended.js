@@ -1,12 +1,14 @@
 import React from 'react'
 import './CartProductListItemExtended.css'
 import QuantityInput from '../quantity/QuantittyInput'
+import {connect} from 'react-redux'
 
     const CartProductListItemExtended = ({
         product,
         productCount,
         removeProductFromCart,
-        ChangeCountInCart
+        ChangeCountInCart,
+        isLiked
     }) => (
    
         <div className="cart-product-list-item-description">
@@ -24,6 +26,7 @@ import QuantityInput from '../quantity/QuantittyInput'
                     <p className="cart-extended-count">
                          Selected quantity: <span className="bold"> {productCount} </span> 
                     </p>
+                    <button>{isLiked?<span>&#9829;</span>:<span>&#9825;</span> }</button>
                     <QuantityInput
                     minValue={0}
                     ChangeCountInCart={ChangeCountInCart}
@@ -47,5 +50,9 @@ import QuantityInput from '../quantity/QuantittyInput'
         </div>
 )
 
-export default CartProductListItemExtended
+const mapStateToProps = (state, props) => ({
+    isLiked: state.likeProductsState[props.product.id],
+})
+
+export default connect(mapStateToProps) (CartProductListItemExtended)
 

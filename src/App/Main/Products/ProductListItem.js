@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './ProductListItem.css'
 import QuantityInput from '../../../features/quantity/QuantittyInput'
 import {connect} from 'react-redux'
+
 class ProductListItem extends Component {
 
     state = {
@@ -73,7 +74,7 @@ ProductListItem.propTypes = {
 }
 
 const mapStateToProps = (state, props) => ({
-    isLiked: state[props.id],
+    isLiked: state.likeProductsState[props.id],
 })
 
     const mapDispatchToProps = (dispatch) => ({
@@ -84,6 +85,11 @@ const mapStateToProps = (state, props) => ({
         removeLike: (id)=>dispatch ({
             type: 'DISLIKE',
             id:id
+        }),
+        addProductToCart:  (id, count)=> dispatch ({
+            type: 'ADD_PRODUCT_TO_CART',
+            id:id,
+            count: count,
         })
 })
 

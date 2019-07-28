@@ -6,10 +6,10 @@ import {createStore} from 'redux'
 import './index.css';
 import App from './App/App';
 import * as serviceWorker from './serviceWorker';
-import productLikeReducer from './store/productLikeReducer'
+import rootReducer from './store/rootReducer';
 
 const store = createStore(
-    productLikeReducer,
+    rootReducer,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     ) 
 // reducer - функция яка буде знати як змінювати стейт
