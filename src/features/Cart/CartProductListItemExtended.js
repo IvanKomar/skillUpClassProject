@@ -7,8 +7,8 @@ import {connect} from 'react-redux'
         product,
         productCount,
         removeProductFromCart,
-        ChangeCountInCart,
-        isLiked
+        isLiked,
+        ChangeProductQuantity
     }) => (
    
         <div className="cart-product-list-item-description">
@@ -29,17 +29,17 @@ import {connect} from 'react-redux'
                     <button>{isLiked?<span>&#9829;</span>:<span>&#9825;</span> }</button>
                     <QuantityInput
                     minValue={0}
-                    ChangeCountInCart={ChangeCountInCart}
+                    
                     OnDecrementClick={()=>{
                         if (productCount===1) {
                             removeProductFromCart(product.id)
                         } 
                         else {
-                            ChangeCountInCart(product.id,productCount -1)
+                            ChangeProductQuantity(product.id,productCount -1)
                         }
                         }}
                     productCount={productCount}
-                    OnIncrementClick={()=>ChangeCountInCart(product.id,productCount +1)}
+                    OnIncrementClick={()=>ChangeProductQuantity(product.id,productCount +1)}
                     />
                     <p className="cart-extended-sum">
                          Sum for this item: <span className="bold sum-price">$ {(product.price * productCount)} </span> 
@@ -54,5 +54,17 @@ const mapStateToProps = (state, props) => ({
     isLiked: state.likeProductsState[props.product.id],
 })
 
-export default connect(mapStateToProps) (CartProductListItemExtended)
+const mapDispatchToProps = (dispatch)=> ({
+    removeProductFromCart:(id)=> dispatch({
+        type: 'REMOVE_PRODUCT_FROM_CART',
+        id:id,
+    }),
+    ChangeProductQuantity:(id,count)=> dispatch({
+        type: 'CHANGE_PRODUCT_QUANTITY',
+        id:id,
+        count:count,
+    })
+})
+
+export default connect(mapStateToProps, mapDispatchToProps) (CartProductListItemExtended)
 

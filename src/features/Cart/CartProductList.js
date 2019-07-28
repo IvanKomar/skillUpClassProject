@@ -9,7 +9,7 @@ const CartProductList = ({
     productsMap=getProductsMap(products),
     CartListItem = CartProductListItem,
     removeProductFromCart,
-    ChangeCountInCart
+    ChangeProductQuantity
     }) => {    
     return (
     <div>
@@ -20,7 +20,7 @@ const CartProductList = ({
             product={productsMap[productId]}
             productCount={productsInCart[productId]}
             removeProductFromCart={removeProductFromCart}
-            ChangeCountInCart={ChangeCountInCart}
+            ChangeProductQuantity={ChangeProductQuantity}
             />
         ))
     }
