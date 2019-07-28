@@ -18,6 +18,14 @@ class ProductListItem extends Component {
             productCount: prevState.productCount - 1
         }))
     }
+    onLikeChange = ()=> {
+        if(this.props.isLiked) {
+            this.props.removeLike(this.props.id)
+        } 
+        else {
+            this.props.addLike(this.props.id)
+        }
+    }
     
     render () {
         const {
@@ -34,7 +42,7 @@ class ProductListItem extends Component {
 
         return (<div className="product-list-item"> 
         <div className="product-img"> <img  alt={`Зображення ${name}`} src={image}></img></div>
-        <button>
+        <button onClick={()=>this.onLikeChange()}>
     {isLiked?<span>&#9829;</span>:<span>&#9825;</span> }</button>
         <div className="product-title"> {name} </div>
         <div className="product-description"> {description}</div>
@@ -68,4 +76,15 @@ const mapStateToProps = (state, props) => ({
     isLiked: state[props.id],
 })
 
-export default connect(mapStateToProps) (ProductListItem)
+    const mapDispatchToProps = (dispatch) => ({
+        addLike: (id)=>dispatch ({
+            type: 'LIKE',
+            id:id
+        }),
+        removeLike: (id)=>dispatch ({
+            type: 'DISLIKE',
+            id:id
+        })
+})
+
+export default connect(mapStateToProps,mapDispatchToProps) (ProductListItem)

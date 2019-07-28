@@ -8,7 +8,10 @@ import App from './App/App';
 import * as serviceWorker from './serviceWorker';
 import productLikeReducer from './store/productLikeReducer'
 
-const store = createStore(productLikeReducer) 
+const store = createStore(
+    productLikeReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    ) 
 // reducer - функция яка буде знати як змінювати стейт
 // в createStore потрібно передати reducer productLikeReducer на базі попереднього стейту та екшну
 // компонент якому потрібно брати дані зі сховища потрібно підключити за допомогою функції connect
